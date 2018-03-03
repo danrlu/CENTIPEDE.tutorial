@@ -168,7 +168,7 @@ centipede_data <- function(
     # Since we have two strands, the first half of the matrix represents the
     # positive strand and the second have represents the negative strand.
     is.neg <- as.numeric(strand == "-")
-    j <- 1 + position - min(position) + (region_len * is.neg)
+    j <- 1 + position - region$start + (region_len * is.neg)
 
     as.numeric(table(factor(j, levels = seq(1, 2 * region_len))))
   }))
